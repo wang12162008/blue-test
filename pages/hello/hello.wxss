@@ -1,0 +1,93 @@
+/* pages/about/about.wxss */
+page {
+  color: #333;
+  background-color: #Fff;
+}
+.connected_info {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #fff;
+  padding: 10px;
+  padding-bottom: 20px;
+  margin-bottom: env(safe-area-inset-bottom);
+  font-size: 14px;
+  min-height: 100px;
+  box-shadow: 0px 0px 3px 0px;
+}
+.toptex{
+  color: #111;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  font-size: 24px;
+  margin-top: 10pt;
+}
+.toptex2{
+  color: #922;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  font-size: 20px;
+  margin-top: 1pt;
+}
+.midtex{
+  color: #111;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  font-size: 18px;
+  margin-top: 2pt;
+}
+.div{
+  background-color:  #fff;
+   height: 10pt;
+   width: 100%;
+}
+.button_sp{
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 5px;
+  background-color: #35373a;
+  color: #FFF;
+  height: 80%;
+}
+.button_sp2{
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 5px;
+  background-color: #757575;
+  color: #FFF;
+  height: 80%;
+}
+.bottomtext {
+  position: fixed;
+  bottom: 0;
+  width: 90%;
+  padding: 10px;
+  padding-bottom: 30px;
+  margin-bottom: env(safe-area-inset-bottom);
+  font-size: 14px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}.view_list {
+  height: 80%;
+  margin: 50px 5px;
+  margin-top: 5px;
+  border: 1px solid #EEE;
+  border-radius: 5px;
+  width: auto;
+}.widget__arrow{
+  width: 200px;  
+  height: 200px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}.imagesize{
+ display:flex;                  
+ justify-content: center;    
+}.imagesize image { 
+  width:400rpx;
+  height:400rpx;
+  }

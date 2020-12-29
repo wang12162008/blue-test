@@ -1,0 +1,85 @@
+<!--pages/comm/comm.wxml-->
+<text id="v5" class='devices_summary'>{{deviceadd}}</text>
+<!--横向均分  -->
+<view class="layout_horizontal"id="v1">
+  <button class="button_sp"hover-class="button_sp2"style="flex:1"bindtap='goclear'>清屏</button>
+  <button class="button_sp"style="flex:1" >{{connectState}}</button>
+  <button class="button_sp"hover-class="button_sp2"style="flex:1" bindtap='gotoback'>返回</button>
+</view>
+
+<view class="layout_horizontal"id="v2">
+<checkbox-group style="flex:1.45;display: flex;"bindchange='hexsend'>
+<checkbox class="flex-wrp2"value="send"  >十六进制发送</checkbox>
+</checkbox-group>
+<checkbox-group style="flex:1.45;display: flex;"bindchange='hexrec'>
+<checkbox class="flex-wrp2"value="rec" >十六进制接收</checkbox>
+</checkbox-group>
+  <button class="button_sp"hover-class="button_sp2"style="flex:1" bindtap='godisconnect'>{{reconnect}}</button>
+</view>
+
+<view class="layout_horizontal"id="v3">
+<view class = "vcon" hover-class="vcon2"bindtap='settime'
+style="flex:1;display: flex;flex-direction:column;">
+<view class="flex-view-item">自动发送周期</view>
+<view class="flex-view-item">{{autoSendInv}}ms</view>
+</view>
+<view class = "vcon"style="flex:1;display: flex;flex-direction:column;">
+<view class="flex-view-item">RX:{{rxRate}}B/S</view>
+<view class="flex-view-item">TX:{{txRate}}B/S</view>
+</view>
+<view class = "vcon"style="flex:1;display: flex;flex-direction:column;">
+<view class="flex-view-item">RX:{{rxCount}}</view>
+<view class="flex-view-item">TX:{{txCount}}</view>
+</view>
+</view>
+
+<scroll-view class="container" style="height: {{scrollViewHeight-150}}px" scroll-y="true"  >
+ <view style='display: flex; '>
+  <view class="note_itemtext">{{recdata}}</view>
+ </view>
+</scroll-view>
+
+<view class="layout_horizontal"id="v4">
+<input class="inputView" bindinput="voteTitle"adjust-position="true"style="flex:1;font-size: 16px;margin-left: 5px;"  placeholder="写入数据"value="{{sendText}}"> 
+</input> 
+<button class="button_sp"hover-class="button_sp2"bindtap='goautosend'>{{autosendText}}</button>
+  <button class="button_sp"hover-class="button_sp2"bindtap='gosend'>发送</button>
+</view>
+<view class="flex-view-item"id="v5">
+  <button class="button_sp"hover-class="button_sp2"bindtap='sendup'>上</button>
+</view>
+<view class="flex-view-item"id="v6">
+  <button class="button_sp"hover-class="button_sp2"bindtap='sendleft'>左边</button>
+  <button class="button_sp"hover-class="button_sp2"bindtap='sendstop'>停止</button>
+  <button class="button_sp"hover-class="button_sp2"bindtap='sendright'>右边</button>
+</view>
+<view class="flex-view-item"id="v7">
+  <button class="button_sp"hover-class="button_sp2"bindtap='senddown'>下</button>
+  
+</view>
+
+<!--弹窗设置时间-->
+<view class="modal-mask" bindtap="hideModal" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+<view class="modal-dialog" wx:if="{{showModal}}">
+  <view class="modal-title">自动发送周期[ms]</view>
+  <view class="modal-content">
+    <view class="modal-input">
+      <input placeholder-class="input-holder" type="number" maxlength="5" bindinput="timeinputChange"   class="input" placeholder="时间ms" value='{{autoSendInv}}'></input>
+    </view>
+  </view>
+  <view class="modal-footer">
+    <view class="btn-cancel" bindtap="onCancel" data-status="cancel">取消</view>
+    <view class="btn-confirm" bindtap="onConfirm" data-status="confirm">确定</view>
+  </view>
+</view>
+<!-- 弹出定时发送设置 -->
+
+
+<!-- 弹出提示框 start -->
+<view class="dialog_screen" bindtap="hideModalTips" wx:if="{{showModalStatus}}"></view>
+<view animation="{{animationData}}" class="dialog_attr_box" wx:if="{{showModalStatus}}">
+  <view style='background:white;position: relative;overflow: hidden;'>
+  <view class='dialog_title'>{{showTips}}</view>
+  </view>
+</view>
+<!-- 弹出提示框 end -->
