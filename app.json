@@ -1,0 +1,14 @@
+{
+  "pages": [
+    "pages/hello/hello",
+    "pages/comm/comm",
+    "pages/index/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "BLE串口调试助手",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json"
+}
